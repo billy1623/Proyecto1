@@ -3,7 +3,7 @@ package Vista;
 import java.util.Scanner;
 
 public class PilaVista {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public PilaVista() {
         scanner = new Scanner(System.in);

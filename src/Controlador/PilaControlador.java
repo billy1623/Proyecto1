@@ -4,8 +4,8 @@ import Modelo.Pila;
 import Vista.PilaVista;
 
 public class PilaControlador {
-    private Pila modelo;
-    private PilaVista vista;
+    private final Pila modelo;
+    private final PilaVista vista;
 
     public PilaControlador(Pila modelo, PilaVista vista) {
         this.modelo = modelo;
@@ -53,8 +53,17 @@ public class PilaControlador {
     public static void main(String[] args) {
         Pila modelo = new Pila();
         PilaVista vista = new PilaVista();
-        PilaControlador controlador = new PilaControlador(modelo, vista);
-        controlador.iniciar();
+        try {
+            // Código principal que puede generar excepciones
+            PilaControlador controlador = new PilaControlador(modelo, vista);
+            controlador.iniciar();
+        } catch (Exception e) {
+            // Capturar cualquier excepción y mostrar un mensaje de error
+            System.out.println("Ocurrió un error: " + e.getMessage());
+            e.printStackTrace();  // Imprime más detalles de la excepción
+        }
+
+
     }
 }
 

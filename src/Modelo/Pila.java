@@ -1,6 +1,6 @@
 package Modelo;
 public class Pila {
-    private int[] pila;
+    private final int[] pila;
     private int cima;
     private static final int MAX = 6;
 
